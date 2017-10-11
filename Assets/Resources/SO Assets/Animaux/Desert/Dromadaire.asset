@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937f0a794c72a444a9a55c583ebccd0a, type: 3}
+  m_Name: Dromadaire
+  m_EditorClassIdentifier: 
+  characterAsset: {fileID: 0}
+  Nom: Dromadaire
+  Description: <b><size=27>Charge.</size></b>
+  Set: 0
+  DernierSouffle: 0
+  Tension: 0
+  ImageCarte: {fileID: 21300000, guid: 9e3a82ce732bf49cb982c3a9fd148e12, type: 3}
+  Rarete: 0
+  couteRessourcesDesert: 1
+  CoutEnRessourceDesert: 2
+  couteRessourcesOcean: 0
+  CoutEnRessourceOcean: 0
+  Attaque: 2
+  VieMaximum: 4
+  TypeText: "Cam\xE9lid\xE9s"
+  TypeImage: {fileID: 21300000, guid: 21842669030ca492287346142717ae4a, type: 3}
+  NombreAttaqueParTour: 1
+  Taunt: 0
+  Meute: 0
+  Charge: 1
+  CreatureScriptName: 
+  specialCreatureAmount: 0
+  specialCreatureName: 
+  PireEnnemi: Lion
+  MeilleurAllie: "Rhinoc\xE9ros"
+  SpellScriptName: 
+  specialSpellAmount: 0
+  specialSpellCreatureName: 
+  Cible: 0

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937f0a794c72a444a9a55c583ebccd0a, type: 3}
+  m_Name: "De\u0301shydratation"
+  m_EditorClassIdentifier: 
+  characterAsset: {fileID: 0}
+  Nom: 
+  Description: Piochez 3 cartes.
+  Set: 0
+  DernierSouffle: 0
+  Tension: 0
+  ImageCarte: {fileID: 21300000, guid: 00a2f5a044fd1461b85e4f18eced1ea5, type: 3}
+  Rarete: 0
+  couteRessourcesDesert: 1
+  CoutEnRessourceDesert: 4
+  couteRessourcesOcean: 0
+  CoutEnRessourceOcean: 0
+  Attaque: 0
+  VieMaximum: 0
+  TypeText: 
+  TypeImage: {fileID: 0}
+  NombreAttaqueParTour: 1
+  Taunt: 0
+  Meute: 0
+  Charge: 0
+  CreatureScriptName: 
+  specialCreatureAmount: 0
+  specialCreatureName: 
+  PireEnnemi: 
+  MeilleurAllie: 
+  SpellScriptName: DrawCards
+  specialSpellAmount: 3
+  specialSpellCreatureName: 
+  Cible: 0
