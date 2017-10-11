@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LowPlayer
+  - TopPlayer
+  - LowCard
+  - TopCard
+  - LowCreature
+  - TopCreature
   layers:
   - Default
   - TransparentFX
