@@ -18,7 +18,10 @@ public class UpdateManaCrystalsCommand : Command {
     public override void StartCommandExecution()
     {
         p.PArea.ManaBar.AvailableOceanRessources = AvailableOceanRessources;
+        p.PArea.ManaBar.ProgressTextOcean.text = AvailableOceanRessources.ToString();
+
         p.PArea.ManaBar.AvailableSunRessources = AvailableSunRessources;
+        p.PArea.ManaBar.ProgressTextSun.text = AvailableSunRessources.ToString();
         CommandExecutionComplete();
     }
 }

@@ -61,8 +61,13 @@ public class TurnManager : MonoBehaviour {
 
         foreach (Player p in Player.Players)
         {
+           // p.RessourceSunThisTurn = 0;
+           // p.RessourceOceanThisTurn = 0;
+
+            // FOR TEST ONLY
             p.RessourceSunThisTurn = 0;
             p.RessourceOceanThisTurn = 0;
+
             p.LoadCharacterInfoFromAsset();
             p.TransmitInfoAboutPlayerToVisual();
             p.PArea.PDeck.CardsInDeck = p.deck.cards.Count;

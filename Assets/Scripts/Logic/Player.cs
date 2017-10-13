@@ -20,6 +20,9 @@ public class Player : MonoBehaviour, ICharacter
         get{ return PlayerID; }
     }
 
+    private int sunTerrains;
+    private int oceanTerrains;
+
    private int ressourceSunThisTurn;
     public int RessourceSunThisTurn
     {
@@ -94,7 +97,17 @@ public class Player : MonoBehaviour, ICharacter
         usedHeroPowerThisTurn = false;
         usedWheelOfBiomes = false;
 
+        int compteur;
+        for (compteur = 0; compteur < sunTerrains; compteur++)
+        {
+            RessourceSunThisTurn++;
+        }
 
+        int compteur2;
+        for (compteur2 = 0; compteur2 < oceanTerrains; compteur2++)
+        {
+            RessourceOceanThisTurn++;
+        }
 
         foreach (CreatureLogic cl in table.CreaturesOnTable)
             cl.OnTurnStart();
@@ -116,7 +129,7 @@ public class Player : MonoBehaviour, ICharacter
         GetComponent<TurnMaker>().StopAllCoroutines();
     }
 
-    public void DrawACard(bool fast = false)
+    public void DrawACard(bool fast = true)
     {
         if (deck.cards.Count > 0)
         {
@@ -294,6 +307,7 @@ public class Player : MonoBehaviour, ICharacter
     public void AddRessourceSun()
     {
         RessourceSunThisTurn++;
+        sunTerrains++;
         Debug.Log(RessourceSunThisTurn);
         usedWheelOfBiomes = true;
     }
@@ -301,6 +315,7 @@ public class Player : MonoBehaviour, ICharacter
     public void AddRessourceOcean()
     {
 		RessourceOceanThisTurn++;
+        oceanTerrains++;
 		usedWheelOfBiomes = true;
     }
 		

@@ -51,7 +51,8 @@ public class WheelOfBiomes : MonoBehaviour
         CheckWhoseTurn();
     }
 
-	public void CheckWhoseTurn()
+
+    public void CheckWhoseTurn()
 	{
         if (TurnManager.Instance.whoseTurn == player)
 		{
@@ -66,19 +67,47 @@ public class WheelOfBiomes : MonoBehaviour
 			TourAdverse.SetActive(true);
 			Front.SetActive(false);
 			Back.SetActive(false);
-            buttonRessourceSun.enabled = false;
-            buttonRessourceOcean.enabled = false;
-            buttonDraw.enabled = false;
+            DisableColliders();
 		}
 	}
 
-    void OnMouseDown()
+    // TODO résoudre le bug de non-disparition des colliders après le double click qui relance la roue
+
+    // Update is called once per frame
+    void Update () {
+        if (Input.GetMouseButtonDown(0)) {
+            CheckWhichColliderIsClicked();
+        }       
+    }
+
+    void CheckWhichColliderIsClicked() {
+        RaycastHit hit; 
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if(Physics.Raycast (ray, out hit, 100.0f))
+        {
+            if (hit.collider == buttonRessourceOcean){
+                GlobalSettings.Instance.Players[owner].AddRessourceOcean();
+                wasUsedThisTurn = !wasUsedThisTurn;
+                CheckWhoseTurn();
+                DisableColliders();
+            } else if(hit.collider == buttonRessourceSun) {
+                GlobalSettings.Instance.Players[owner].AddRessourceSun();
+                wasUsedThisTurn = !wasUsedThisTurn;
+                CheckWhoseTurn();
+                DisableColliders();
+            } else if(hit.collider == buttonDraw) {
+                TurnManager.Instance.whoseTurn.DrawACard(fast: false);
+                wasUsedThisTurn = !wasUsedThisTurn;
+                CheckWhoseTurn();
+                DisableColliders();
+            }
+        }
+    }
+
+    void DisableColliders()
     {
-		if (!wasUsedThisTurn)
-		{
-            GlobalSettings.Instance.Players[owner].AddRessourceSun();
-			wasUsedThisTurn = !wasUsedThisTurn;
-            CheckWhoseTurn();
-		}
+        buttonRessourceSun.enabled = false;
+        buttonRessourceOcean.enabled = false;
+        buttonDraw.enabled = false;
     }
 }
